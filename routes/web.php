@@ -24,4 +24,6 @@ Route::resource('semestres', App\Http\Controllers\SemestreController::class);
 Route::resource('carreras', App\Http\Controllers\CarreraController::class);
 Route::resource('materias', App\Http\Controllers\MateriaController::class);
 Route::resource('tperiodos', App\Http\Controllers\TperiodoController::class);
+Route::resource('sesiones', App\Http\Controllers\SesioneController::class);
+Route::resource('dias', App\Http\Controllers\DiaController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

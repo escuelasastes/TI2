@@ -43,11 +43,19 @@
                         <a class="nav-link" href="{{ route('carreras.index') }}">{{ __('Carreras') }}</a>
                     </ul>
                     <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('materias.index') }}">{{ __('Materias') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
                         <a class="nav-link" href="{{ route('tperiodos.index') }}">{{ __('Tipo periodo') }}</a>
                     </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <a class="nav-link" href="{{ route('dias.index') }}">{{ __('Dias de Clase') }}</a>
+                    </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <a class="nav-link" href="{{ route('sesiones.index') }}">{{ __('Sesiones') }}</a>
+                    </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <a class="nav-link" href="{{ route('materias.index') }}">{{ __('Materias') }}</a>
+                    </ul>
+                    
+                    
                     @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
