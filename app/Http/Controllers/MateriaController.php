@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Materia;
+use App\Models\Grupo;
+use App\Models\Semestre;
+use App\Models\Carrera;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +35,10 @@ class MateriaController extends Controller
     public function create()
     {
         $materia = new Materia();
-        return view('materia.create', compact('materia'));
+        $grupos =  Grupo::all();
+        $semestres =  Semestre::all();
+        $carreras =  Carrera::all();
+        return view('materia.create', compact('materia','grupos','semestres','carreras'));
     }
 
     /**

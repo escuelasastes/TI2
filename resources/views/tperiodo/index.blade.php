@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Materia
+    Tperiodo
 @endsection
 
 @section('content')
@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Materia') }}
+                                {{ __('Tperiodo') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('materias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Registrar materia') }}
+                                <a href="{{ route('tperiodos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Create New') }}
                                 </a>
                               </div>
                         </div>
@@ -36,33 +36,25 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nom</th>
-										<th>Clavemat</th>
-										<th>Semestres Id</th>
-										<th>Carreras Id</th>
-										<th>Grupos Id</th>
+										<th>Descripcion</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($materias as $materia)
+                                    @foreach ($tperiodos as $tperiodo)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $materia->nom }}</td>
-											<td>{{ $materia->claveMat }}</td>
-											<td>{{ $materia->semestres_id }}</td>
-											<td>{{ $materia->carreras_id }}</td>
-											<td>{{ $materia->grupos_id }}</td>
+											<td>{{ $tperiodo->descripcion }}</td>
 
                                             <td>
-                                                <form action="{{ route('materias.destroy',$materia->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('materias.show',$materia->id) }}"><i class="fa fa-fw fa-eye"></i>  Mostrar</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('materias.edit',$materia->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <form action="{{ route('tperiodos.destroy',$tperiodo->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('tperiodos.show',$tperiodo->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('tperiodos.edit',$tperiodo->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -72,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $materias->links() !!}
+                {!! $tperiodos->links() !!}
             </div>
         </div>
     </div>

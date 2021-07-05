@@ -11,19 +11,33 @@
             {{ Form::text('claveMat', $materia->claveMat, ['class' => 'form-control' . ($errors->has('claveMat') ? ' is-invalid' : ''), 'placeholder' => 'Clavemat']) }}
             {!! $errors->first('claveMat', '<div class="invalid-feedback">:message</p>') !!}
         </div>
+        
         <div class="form-group">
             {{ Form::label('semestres_id') }}
-            {{ Form::text('semestres_id', $materia->semestres_id, ['class' => 'form-control' . ($errors->has('semestres_id') ? ' is-invalid' : ''), 'placeholder' => 'Semestres Id']) }}
-            {!! $errors->first('semestres_id', '<div class="invalid-feedback">:message</p>') !!}
+            <select name="semestres_id" id="semestres_id" class="form-control">
+             @foreach ($semestres as $semestre)
+             <option value="{{$semestre['id']}}">{{$semestre['descripcion']}}</option> 
+            @endforeach
+            </select>
+            {!! $errors->first('grupos_id', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('carreras_id') }}
-            {{ Form::text('carreras_id', $materia->carreras_id, ['class' => 'form-control' . ($errors->has('carreras_id') ? ' is-invalid' : ''), 'placeholder' => 'Carreras Id']) }}
-            {!! $errors->first('carreras_id', '<div class="invalid-feedback">:message</p>') !!}
-        </div>
+            <select name="carreras_id" id="carreras_id" class="form-control">
+             @foreach ($carreras as $carrera)
+             <option value="{{$carrera['id']}}">{{$carrera['carrera']}}</option> 
+            @endforeach
+            </select>
+            {!! $errors->first('grupos_id', '<div class="invalid-feedback">:message</p>') !!}
+        </div>                              
+        
         <div class="form-group">
             {{ Form::label('grupos_id') }}
-            {{ Form::text('grupos_id', $materia->grupos_id, ['class' => 'form-control' . ($errors->has('grupos_id') ? ' is-invalid' : ''), 'placeholder' => 'Grupos Id']) }}
+            <select name="grupos_id" id="grupos_id" class="form-control">
+             @foreach ($grupos as $grupo)
+             <option value="{{$grupo['id']}}">{{$grupo['descripcion']}}</option> 
+            @endforeach
+            </select>
             {!! $errors->first('grupos_id', '<div class="invalid-feedback">:message</p>') !!}
         </div>
 
