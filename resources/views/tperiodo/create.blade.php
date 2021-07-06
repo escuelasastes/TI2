@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('Template.template')
 @section('template_title')
     Create Tperiodo
 @endsection

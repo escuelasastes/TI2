@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Template.template')
 
 @section('template_title')
     Update Semestre
